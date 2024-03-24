@@ -45,7 +45,7 @@ function generateGrid(size){
             // Hover event listener
             newDiv.addEventListener("mouseover", function()
             {
-                newDiv.style.backgroundColor="purple";
+                newDiv.style.backgroundColor= generateRandomHexColor();
             });
 
             // Append
@@ -69,6 +69,14 @@ function removeGrid()
     while(containerDiv.firstChild) {
         containerDiv.removeChild(containerDiv.firstChild);
     }
+}
+
+function generateRandomHexColor()
+{
+    let randomColor = Math.floor(Math.random() * 16777215).toString(16);
+    randomColor = "#" + randomColor.padStart(6, "0");
+
+    return randomColor;
 }
 
 generateGrid(gridSize);
