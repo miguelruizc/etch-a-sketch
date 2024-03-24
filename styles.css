@@ -1,4 +1,4 @@
-/* GRID_SIZE = 16*16 */
+/* DEFAULT_GRID_SIZE = 16*16 */
 :root {
     --grid-size: 16;
 }
@@ -9,6 +9,7 @@
     box-sizing: border-box;
 
     background-color: black;
+    color: white;
 }
 
 .container {
