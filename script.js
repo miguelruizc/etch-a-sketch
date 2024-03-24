@@ -5,7 +5,7 @@ let gridSize = DEFAULT_GRID_SIZE;
 let gridSizeButton = document.querySelector(".gridSizeButton");
 
 gridSizeButton.addEventListener("click", () => {
-    let userInput = window.prompt("Enter number of squares per side: ");
+    let userInput = window.prompt("Enter number of squares per side (between 1 and 100): ");
     
     userInput = parseInt(userInput);
 
