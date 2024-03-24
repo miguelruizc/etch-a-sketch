@@ -20,8 +20,7 @@
 }
 
 .gridDiv {
-    border: 1px dotted white;
-    background-color: crimson;
+    background-color: lightgoldenrodyellow;
 
     width: calc(100% / var(--grid-size));
     height: calc(100% / var(--grid-size));

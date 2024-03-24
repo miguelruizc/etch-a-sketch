@@ -45,7 +45,7 @@ function generateGrid(size){
             // Hover event listener
             newDiv.addEventListener("mouseover", function()
             {
-                newDiv.style.backgroundColor="green";
+                newDiv.style.backgroundColor="purple";
             });
 
             // Append
