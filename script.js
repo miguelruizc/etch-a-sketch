@@ -11,17 +11,20 @@ gridSizeButton.addEventListener("click", () => {
 
     if(isNaN(userInput) || userInput < 0){
         gridSize = DEFAULT_GRID_SIZE;
-        console.log(gridSize);
+        removeGrid();
+        generateGrid(gridSize);
         return;
     }
     else if(userInput > 100) {
         gridSize = 100;
-        console.log(gridSize);
+        removeGrid();
+        generateGrid(gridSize);
         return;
     }
     else {
         gridSize = userInput;
-        console.log(gridSize);
+        removeGrid();
+        generateGrid(gridSize);
         return;
     }
 });
@@ -56,6 +59,16 @@ function generateGrid(size){
         element.style.width = "calc(100% / " + size + " )";
         element.style.height = "calc(100% / " + size + " )";
     });
+}
+
+function removeGrid()
+{
+    // Removes all elements within "container" (if any)
+    let containerDiv = document.querySelector(".container");
+    
+    while(containerDiv.firstChild) {
+        containerDiv.removeChild(containerDiv.firstChild);
+    }
 }
 
 generateGrid(gridSize);
