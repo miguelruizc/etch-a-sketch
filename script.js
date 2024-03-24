@@ -26,27 +26,36 @@ gridSizeButton.addEventListener("click", () => {
     }
 });
 
-// Container holding the grid 
-let containerDiv = document.querySelector(".container");
+function generateGrid(size){
+    // Container holding the grid 
+    let containerDiv = document.querySelector(".container");
 
-// Iterate grid
-for(let i = 0; i < DEFAULT_GRID_SIZE; i++)
-{
-    for(let j = 0; j < DEFAULT_GRID_SIZE; j++)
+    // Iterate grid
+    for(let i = 0; i < size; i++)
     {
-        // Create new gridDiv
-        let newDiv = document.createElement("div");
-        newDiv.classList.add("gridDiv");
-        
-        // Hover event listener
-        newDiv.addEventListener("mouseover", function()
+        for(let j = 0; j < size; j++)
         {
-            newDiv.style.backgroundColor="green";
-        });
+            // Create new gridDiv
+            let newDiv = document.createElement("div");
+            newDiv.classList.add("gridDiv");
+            
+            // Hover event listener
+            newDiv.addEventListener("mouseover", function()
+            {
+                newDiv.style.backgroundColor="green";
+            });
 
-        // Append
-        containerDiv.appendChild(newDiv);
-
-    
+            // Append
+            containerDiv.appendChild(newDiv);
+        }
     }
+
+    // Change CSS style for the new grid
+    let elements = document.querySelectorAll(".gridDiv");
+    elements.forEach(function(element){
+        element.style.width = "calc(100% / " + size + " )";
+        element.style.height = "calc(100% / " + size + " )";
+    });
 }
+
+generateGrid(gridSize);
